@@ -13,6 +13,33 @@
 #   Check Package:             'Cmd + Shift + E'
 #   Test Package:              'Cmd + Shift + T'
 
+#' @title Simple estimate of pi using a simulation
+#'
+#' @description Compute an approximation of pi using simulation. The idea is to
+#'  take a certain number of points (B is the number) that goes from -1 to 1 and
+#'   store they coordinate. Then using the fact that a circle has an area of pi
+#'   we can calculate an aproximation of pi. We take the area of the square which
+#'   is 4, times the total of point that are in the circle, divided by the total
+#'   of point (B). Then use plot.pi() to plot the simulated point.
+#' @param B A \code{numeric} (integer) used to denote the number of points in the
+#'  simulations.
+#' @param seed A \code{numeric} used to control the seed of the random number
+#' generator used by this function.
+#' @return A \code{list} containing the following attributes:
+#' \describe{
+#'      \item{estimated_pi}{Estimated value of pi}
+#'      \item{points}{list of all the point that have been generated, we have
+#'       their x and y coordinates and inside which tell us if the points is in
+#'       the circle or outside}
+#' }
+#' @author Julien Kleinmann, Constance Havret, Lumia Claramunt, Sana Ghali,
+#' Azza Akamoun
+#' @importFrom stats runif
+#' @export
+#' @examples
+#' estimate_pi( B=5000, seed = 10)
+#'
+#' plot.pi(estimate_pi( B=5000, seed = 10))
 
 estimate_pi <- function(B = 5000, seed = 10) {
 
