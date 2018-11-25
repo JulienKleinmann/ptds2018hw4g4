@@ -1,26 +1,12 @@
-# Hello, world!
-#
-# This is an example function named 'hello'
-# which prints 'Hello, world!'.
-#
-# You can learn more about package authoring with RStudio at:
-#
-#   http://r-pkgs.had.co.nz/
-#
-# Some useful keyboard shortcuts for package authoring:
-#
-#   Build and Reload Package:  'Cmd + Shift + B'
-#   Check Package:             'Cmd + Shift + E'
-#   Test Package:              'Cmd + Shift + T'
-
+#' @name estimate_pi
 #' @title Simple estimate of pi using a simulation
 #'
 #' @description Compute an approximation of pi using simulation. The idea is to
 #'  take a certain number of points (B is the number) that goes from -1 to 1 and
-#'   store they coordinate. Then using the fact that a circle has an area of pi
+#'   store they coordinate (x and y). Then using the fact that a circle has an area of pi
 #'   we can calculate an aproximation of pi. We take the area of the square which
 #'   is 4, times the total of point that are in the circle, divided by the total
-#'   of point (B). Then use plot.pi() to plot the simulated point.
+#'   of point (B).
 #' @param B A \code{numeric} (integer) used to denote the number of points in the
 #'  simulations.
 #' @param seed A \code{numeric} used to control the seed of the random number
@@ -35,11 +21,11 @@
 #' @author Julien Kleinmann, Constance Havret, Lumia Claramunt, Sana Ghali,
 #' Azza Akamoun
 #' @import ggforce ggplot2 ptds2018 ArgumentCheck
-#' @export
+#' @export estimate_pi
 #' @examples
 #' estimate_pi( B=5000, seed = 10)
 #'
-#' plot.pi(estimate_pi( B=5000, seed = 10))
+
 
 
 
@@ -146,7 +132,22 @@ estimate_pi <- function(B = 5000, seed = 10) {
 
 
 }
+#' @name plot.pi
+#' @title Simple estimate of pi using a simulation
+#'
+#' @description Plot an objet of class "pi" usually created by estimate_pi
+#' @param x A \code{class} (pi) used to pass the points of a simulation into a graph
 
+#' @return A \code{plot} containing the circle,square and all the points
+#'
+#' @author Julien Kleinmann, Constance Havret, Lumia Claramunt, Sana Ghali,
+#' Azza Akamoun
+#' @import ggforce ggplot2 ptds2018 ArgumentCheck
+#' @export plot.pi
+#' @examples
+#' x <- estimate_pi( B=5000, seed = 10)
+#'
+#' plot.pi(x)
 
 plot.pi <- function(x) {
 

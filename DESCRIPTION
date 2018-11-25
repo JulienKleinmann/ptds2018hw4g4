@@ -3,13 +3,9 @@ Type: Package
 Title: Estimation of pi by simulation and plot (getthatpie)
 Version: 0.1.0
 Author: Julien Kleinmann, Constance Havret, Lumia Claramundt, Sana Ghali, Azza Akamoun
-Maintainer: no maintenance
+Maintainer: Joe Developer <Joe.Developer@some.domain.net>
 Description: We simulate some point using estimate_pi() and it returns the valueof pi and all the points info. using plot.pi you can then plot the point to see how the simulation works.
-Imports:
-    ggplot2,
-    ggforce,
-    ptds2018,
-    ArgumentCheck
+Imports:ggplot2,ggforce,ptds2018,ArgumentCheck
 License: No license
 Encoding: UTF-8
 LazyData: true
