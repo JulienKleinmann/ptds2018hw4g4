@@ -34,12 +34,19 @@
 #' }
 #' @author Julien Kleinmann, Constance Havret, Lumia Claramunt, Sana Ghali,
 #' Azza Akamoun
-#' @importFrom stats runif
+#' @import ggforce ggplot2 ptds2018 ArgumentCheck
 #' @export
 #' @examples
 #' estimate_pi( B=5000, seed = 10)
 #'
 #' plot.pi(estimate_pi( B=5000, seed = 10))
+
+
+
+library(ggplot2)
+library(ggforce)
+library(ptds2018)
+library(ArgumentCheck)
 
 estimate_pi <- function(B = 5000, seed = 10) {
 
