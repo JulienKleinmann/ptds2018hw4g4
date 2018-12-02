@@ -11,7 +11,7 @@ person("Azza","Kammoun", email = "azza.kammoun@unil.ch", role = c("aut", "cre"))
 Maintainer: Joe Developer <Joe.Developer@some.domain.net>
 Description: We simulate some point using estimate_pi() and it returns the valueof pi and all the points info. using plot.pi you can then plot the point to see how the simulation works.
 Imports: ggplot2,ggforce,ptds2018,ArgumentCheck,
-    Rcpp
+    Rcpp, shiny (>= 1.2.0)
 License: No license
 Encoding: UTF-8
 LazyData: true
