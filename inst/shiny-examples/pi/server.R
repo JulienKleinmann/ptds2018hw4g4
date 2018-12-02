@@ -8,19 +8,28 @@
 #
 
 library(shiny)
+library(ptds2018hw4g4) 
 
-# Define server logic required to draw a histogram
 shinyServer(function(input, output) {
-   
-  output$distPlot <- renderPlot({
-    
-    # generate bins based on input$bins from ui.R
-    x    <- faithful[, 2] 
-    bins <- seq(min(x), max(x), length.out = input$bins + 1)
-    
-    # draw the histogram with the specified number of bins
-    hist(x, breaks = bins, col = 'darkgray', border = 'white')
-    
+  
+  simulate <- reactive({
+    # simulate pi and measure the time here
+    ...
+  })
+  
+  output$plot <- renderPlot({
+    # plot pi
+    ...
+  })
+  
+  output$time <- renderText({
+    # extract the time of the execution
+    ...
+  })
+  
+  output$pi <- renderText({
+    # extract the estimated value
+    ...
   })
   
 })
