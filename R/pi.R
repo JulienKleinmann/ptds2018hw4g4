@@ -33,6 +33,7 @@ library(ggplot2)
 library(ggforce)
 library(ptds2018)
 library(ArgumentCheck)
+library(Rcpp)
 
 estimate_pi <- function(B = 5000, seed = 10) {
 
