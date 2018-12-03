@@ -42,16 +42,12 @@ LogicalVector is_inside(NumericMatrix points) {
 
   for(int i=0 ; i< points.nrow(); i++){
 
-    if ( pow(points(i,0), 2) + pow(points(i,1), 2))   <= 1 {
+    if ( pow(points(i,0), 2) + pow(points(i,1), 2)  <= 1 ){
 
       inside[i] =true;
 
-    } else {
+    } else { inside[i]=false; } }
 
-      inside[i]=false;
-
-
-  return inside;
-}
+    return inside;
 
   }
