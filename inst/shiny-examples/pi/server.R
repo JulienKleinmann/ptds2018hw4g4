@@ -29,8 +29,7 @@ shinyServer(function(input, output) {
   output$time <- renderPrint({
 
     cat(
-      c("The CPU times for respectively the user,
-        system and the 'real' elapsed time are:","\n" ,system.time(
+      c("Time is" ,"\n" ,system.time(
 
           if(match(input$method,
                    c("estimate_pi", "estimate_pi2")) == 1) {
@@ -54,9 +53,7 @@ shinyServer(function(input, output) {
 
   output$pi <- renderPrint({
     # extract the estimated value
-    cat(c("The estimated value of pi is:",simulate()$estimated_pi))
+    cat(c("Estimated value of pi:",simulate()$estimated_pi))
   })
-
-})
 
 
