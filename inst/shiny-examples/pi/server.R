@@ -17,7 +17,7 @@ shinyServer(function(input, output) {
     ...
   })
   
-  output$plot <- renderPlot({
+  output$plot <- renderPlot({ 
     # plot pi
     ...
   })
