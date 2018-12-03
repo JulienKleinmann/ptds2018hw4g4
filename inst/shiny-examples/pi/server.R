@@ -31,20 +31,12 @@ shinyServer(function(input, output) {
     cat(
       c("Time is" ,"\n" ,system.time(
 
-          if(match(input$method,
-                   c("estimate_pi", "estimate_pi2")) == 1) {
-
-            B <- input$B
-            seed <- input$seed
-            my_pi <- estimate_pi(B, seed)
-            plot(my_pi)
-
+          if( input$method == "estimate_pi") {
+            pi <- estimate_pi(input$B, input$seed)
+            plot(pi)
           } else {
-
-            B <- input$B
-            seed <- input$seed
-            my_pi <- estimate_pi2(B, seed)
-            plot(my_pi)
+            pi <- estimate_pi2(input$B, input$seed)
+            plot(pi)
           }
       )[1:3]
       )
