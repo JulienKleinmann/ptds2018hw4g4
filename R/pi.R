@@ -203,7 +203,7 @@ plot.pi <- function(x) {
 #' estimate_pi2( B=5000, seed = 10)
 #'
 
-
+sourceCpp("is_inside.cpp")
 
 estimate_pi2<- function(B = 5000, seed = 10) {
 
@@ -269,11 +269,6 @@ estimate_pi2<- function(B = 5000, seed = 10) {
   #* Return errors and warnings (if any)
   ArgumentCheck::finishArgCheck(Check)
 
-
-
-
-
-
   # set a seed
   set.seed(seed)
 
@@ -283,11 +278,6 @@ estimate_pi2<- function(B = 5000, seed = 10) {
     inside = rep(NA, B)
   )
 
-  # Test if point are inside or not  and store a boolean in inside :
-
-  # for (i in 1:B){
-  #   points$inside[[i]] <- ifelse(points$x[[i]]^2 + points$y[[i]]^2 <= 1, TRUE, FALSE)
-  # }
 
   points$inside <- is_inside(points$point)
 
