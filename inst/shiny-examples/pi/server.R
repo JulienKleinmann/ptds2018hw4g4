@@ -13,30 +13,50 @@ library(ptds2018hw4g4)
 shinyServer(function(input, output) {
 
   simulate <- reactive({
+
     # simulate pi and measure the time here
     if (input$method == "estimate_pi") {
       estimate_pi(input$seed, input$B)
     } else {estimate_pi2(input$seed, input$B)}
   })
-<<<<<<< HEAD
-  
-  output$plot <- renderPlot({ 
-=======
+
+  })
 
   output$plot <- renderPlot({
->>>>>>> 71120b461176b1f89d617bd9f3435696737d103a
-    # plot pi
-    ...
-  })
+    plot(simulate())
+})
 
-  output$time <- renderText({
-    # extract the time of the execution
-    ...
-  })
+  output$time <- renderPrint({
 
-  output$pi <- renderText({
+    cat(
+      c("The CPU times for respectively the user,
+        system and the 'real' elapsed time are:","\n" ,system.time(
+
+          if(match(input$method,
+                   c("estimate_pi", "estimate_pi2")) == 1) {
+
+            B <- input$B
+            seed <- input$seed
+            my_pi <- estimate_pi(B, seed)
+            plot(my_pi)
+
+          } else {
+
+            B <- input$B
+            seed <- input$seed
+            my_pi <- estimate_pi2(B, seed)
+            plot(my_pi)
+          }
+      )[1:3]
+      )
+)
+})
+
+  output$pi <- renderPrint({
     # extract the estimated value
-    ...
+    cat(c("The estimated value of pi is:",simulate()$estimated_pi))
   })
 
 })
+
+
